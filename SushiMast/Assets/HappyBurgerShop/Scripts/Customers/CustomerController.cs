@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class CustomerController : MonoBehaviour {
 	
@@ -42,7 +43,8 @@ public class CustomerController : MonoBehaviour {
 	//Private variables
 	internal Vector3 destination;				//destination in scene
 	private GameObject gameController; 			//reference to GC object
-	private GameObject serverPlate; 			//reference to plate game ovject
+	private GameObject serverPlate;             //reference to plate game ovject
+	private GameObject buttonCheck;
 	public static bool isCustomerReady;			//flag used to indicate this customer is inside the shop and wants to order something
 
 	public GameObject[] allIngredients;			//list of all ingredients defined for the game
@@ -50,7 +52,7 @@ public class CustomerController : MonoBehaviour {
 
 	private string customerName;				//random name
 	private float currentCustomerPatience;		//current patience of the customer
-	private bool isOnSeat;						//is customer on his seat?
+	public bool isOnSeat;						//is customer on his seat?
 	private Vector3 startingPosition;
 
 	//Patience bar GUI items and vars
@@ -66,6 +68,8 @@ public class CustomerController : MonoBehaviour {
 
 	//Link to prefabs
 	public GameObject moneyGO;					//money (object) the customer pays after receiving the order
+
+	public bool isOrderReady = false;
 
 
 	/// <summary>
@@ -92,6 +96,7 @@ public class CustomerController : MonoBehaviour {
 		startingPosition = transform.position;
 		gameController = GameObject.FindGameObjectWithTag("GameController");
 		serverPlate = GameObject.FindGameObjectWithTag("serverPlate");
+		buttonCheck = GameObject.FindGameObjectWithTag("buttonHold");
 
 		Init();
 		StartCoroutine(goToSeat());
@@ -264,48 +269,58 @@ public class CustomerController : MonoBehaviour {
 	}
 
 
-	/// <summary>
-	/// Customer should pay and leave the restaurant.
-	/// </summary>
-	public void settle (){
-		
-		moodIndex = 2;	//make him/her happy :)
-		
-		//give cash, money, bonus, etc, here.
-		float leaveTime = Time.time;
-		int remainedPatienceBonus = (int)Mathf.Round(customerPatience - (leaveTime - creationTime));
-		
-		//if we have purchased additional items for our restaurant, we should receive more tips
-		int tips = 0;
-		if(PlayerPrefs.GetInt("shopItem-1") == 1) tips += 1;	//if we have seats
-		if(PlayerPrefs.GetInt("shopItem-2") == 1) tips += 2;	//if we have music player
-		if(PlayerPrefs.GetInt("shopItem-3") == 1) tips += 3;	//if we have flowers
+    /// <summary>
+    /// Customer should pay and leave the restaurant.
+    /// </summary>
+    public void settle()
+    {
+		if (buttonCheck.GetComponent<ButtonCompl>().isOrderReady)
+		{
+			moodIndex = 2;  //make him/her happy :)
 
-		//productPrice is the sum of all ingredients price
-		int productPrice = 0;
-		for (int i = 0; i < orderIngredientsIDs.Length; i++) {
-			productPrice += allIngredients [i].GetComponent<IngredientManager> ().price;
+			//give cash, money, bonus, etc, here.
+			float leaveTime = Time.time;
+			int remainedPatienceBonus = (int)Mathf.Round(customerPatience - (leaveTime - creationTime));
+
+			//if we have purchased additional items for our restaurant, we should receive more tips
+			int tips = 0;
+			if (PlayerPrefs.GetInt("shopItem-1") == 1) tips += 1;   //if we have seats
+			if (PlayerPrefs.GetInt("shopItem-2") == 1) tips += 2;   //if we have music player
+			if (PlayerPrefs.GetInt("shopItem-3") == 1) tips += 3;   //if we have flowers
+
+			//productPrice is the sum of all ingredients price
+			int productPrice = 0;
+			for (int i = 0; i < orderIngredientsIDs.Length; i++)
+			{
+				productPrice += allIngredients[i].GetComponent<IngredientManager>().price;
+			}
+
+			int finalMoney = productPrice +
+								remainedPatienceBonus +
+								tips;
+
+			GameObject m = Instantiate(moneyGO,
+				new Vector3(2, -1, -1),
+				Quaternion.Euler(0, 180, 0)) as GameObject;
+			m.name = "CustomerMoney-" + finalMoney.ToString() + "-" + Random.value;
+			m.GetComponent<customerMoneyController>().moneyAmount = finalMoney;
+
+			playSfx(orderIsOkSfx);
+			StartCoroutine(leave());
+			buttonCheck.GetComponent<ButtonCompl>().isOrderReady = false;
 		}
-
-		int finalMoney = 	productPrice +
-							remainedPatienceBonus + 
-							tips;	
-		
-		GameObject m = Instantiate(	moneyGO, 
-			new Vector3(2, -1, -1), 
-			Quaternion.Euler(0, 180, 0)) as GameObject;
-		m.name = "CustomerMoney-" + finalMoney.ToString() + "-" + Random.value;
-		m.GetComponent<customerMoneyController>().moneyAmount = finalMoney;
-
-		playSfx(orderIsOkSfx);
-		StartCoroutine(leave());
-	}
+        else
+        {
+            // If the order is not ready, play a sound effect and do not proceed with the settlement
+            playSfx(orderIsNotOkSfx);
+        }
+    }
 
 
-	/// <summary>
-	/// Simple leave routine.
-	/// </summary>
-	public IEnumerator leave (){
+    /// <summary>
+    /// Simple leave routine.
+    /// </summary>
+    public IEnumerator leave (){
 		
 		//prevent double run
 		if(isLeaving)
@@ -341,11 +356,10 @@ public class CustomerController : MonoBehaviour {
 		}
 	}
 
-
-	/// <summary>
-	/// Play AudioClips
-	/// </summary>
-	void playSfx ( AudioClip _sfx  ){
+    /// <summary>
+    /// Play AudioClips
+    /// </summary>
+    void playSfx ( AudioClip _sfx  ){
 		GetComponent<AudioSource>().clip = _sfx;
 		if(!GetComponent<AudioSource>().isPlaying)
 			GetComponent<AudioSource>().Play();

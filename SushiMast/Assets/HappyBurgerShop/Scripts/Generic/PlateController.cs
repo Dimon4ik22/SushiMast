@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 
-public class PlateController : MonoBehaviour {
+public class PlateController : MonoBehaviour
+{
 
 	/// <summary>
 	/// When we click on any ingredients, the game checks if the ID of selected ingredient matches the customer order.
@@ -14,11 +16,10 @@ public class PlateController : MonoBehaviour {
 	//list of all available ingredients
 	public GameObject[] availableIngredients;
 
-
-	/// <summary>
-	/// Build the shape of customer burger by instantiating related ingredients that match customer's order
-	/// </summary>
-	public void updateDelivery(int ingID) {
+    /// <summary>
+    /// Build the shape of customer burger by instantiating related ingredients that match customer's order
+    /// </summary>
+    public void updateDelivery(int ingID) {
 
 		//number of deliveryQueueItems
 		int dqi = MainGameController.deliveryQueueItems;
@@ -51,5 +52,4 @@ public class PlateController : MonoBehaviour {
 		MainGameController.deliveryQueueItemsContent.Clear();
 
 	}
-
 }

@@ -16,6 +16,7 @@ public class DrinkController : MonoBehaviour {
 	//Reference to game objects
 	private GameObject deliveryPlate;
 	private GameObject currentCustomer;
+	private GameObject buttonCheck;
 
 	//AudioClips
 	public AudioClip wrongPick;
@@ -30,6 +31,7 @@ public class DrinkController : MonoBehaviour {
 		delayTime = 0.15f;
 		canTap = true;
 		deliveryPlate = GameObject.FindGameObjectWithTag ("serverPlate");
+		buttonCheck = GameObject.FindGameObjectWithTag("buttonHold");
 	}
 
 
@@ -110,8 +112,10 @@ public class DrinkController : MonoBehaviour {
 			MainGameController.deliveryQueueItems++;
 			MainGameController.deliveryQueueItemsContent.Add(drinkID);
 
-			//play ingredient pick sound
-			playSfx (correctPick);
+			buttonCheck.GetComponent<ButtonCompl>().isOrderReady = true;
+
+            //play ingredient pick sound
+            playSfx (correctPick);
 
 			//check if order is finished and completed
 			if (MainGameController.deliveryQueueItems == CustomerController.orderIngredientsIDs.Length) {
@@ -125,7 +129,9 @@ public class DrinkController : MonoBehaviour {
 				c.GetComponent<CustomerController> ().settle ();
 			}
 
-			StartCoroutine(reactivate());
+            buttonCheck.GetComponent<ButtonCompl>().isOrderReady = false;
+
+            StartCoroutine(reactivate());
 
 			//debug
 			/*

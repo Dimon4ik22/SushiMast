@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ingredient
+  - drink
+  - serverPlate
+  - EndGamePlane
+  - VideoAdHelperText
+  - customer
+  - DeliveryIngredient
+  - customerMoney
+  - buttonHold
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class IngredientsController : MonoBehaviour {
 
@@ -22,6 +23,7 @@ public class IngredientsController : MonoBehaviour {
 	//Reference to game objects
 	private GameObject deliveryPlate;
 	private GameObject currentCustomer;
+	private GameObject buttonCheck;
 
 	//prefabs
 	public GameObject lockGo;				//lock prefab
@@ -41,7 +43,7 @@ public class IngredientsController : MonoBehaviour {
 		canTap = true;
 		isLocked = true;
 		deliveryPlate = GameObject.FindGameObjectWithTag ("serverPlate");
-
+		buttonCheck = GameObject.FindGameObjectWithTag("buttonHold");
 	}
 
 
@@ -104,6 +106,11 @@ public class IngredientsController : MonoBehaviour {
 
 	}
 
+	public void ButtonQuoue()
+	{
+        StartCoroutine(updateOrderQuoue(gameObject));
+    }
+
 
 	/// <summary>
 	/// when we click on an ingredient, it should match the exact id of the product the current customer wants.
@@ -156,18 +163,6 @@ public class IngredientsController : MonoBehaviour {
 
 			//play ingredient pick sound
 			playSfx (correctPick);
-
-			//check if order is finished and completed
-			if (MainGameController.deliveryQueueItems == CustomerController.orderIngredientsIDs.Length) {
-				//order is complete!
-				print ("Order is done!");
-				//wait
-				yield return new WaitForSeconds (0.2f);
-				playSfx (successfulDelivery);
-				//tell customer to settle and leave
-				GameObject c = GameObject.FindGameObjectWithTag ("customer");
-				c.GetComponent<CustomerController> ().settle ();
-			}
 
 			StartCoroutine(reactivate());
 
