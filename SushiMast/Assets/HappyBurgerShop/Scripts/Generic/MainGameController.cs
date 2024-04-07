@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class MainGameController : MonoBehaviour {
 	
@@ -77,6 +78,8 @@ public class MainGameController : MonoBehaviour {
 	public AudioClip winSfx;
 	public AudioClip loseSfx;
 	public AudioClip tapSfx;
+
+	public static event UnityAction<GameObject> OnCustomerSpawned;
 
 
 	public void Awake (){
@@ -318,6 +321,8 @@ public class MainGameController : MonoBehaviour {
 
 		//set customer's destination
 		newCustomer.GetComponent<CustomerController>().destination = tp;
+
+		OnCustomerSpawned?.Invoke(newCustomer);
 	}
 
 

@@ -2849,6 +2849,7 @@ GameObject:
   - component: {fileID: 323594994}
   - component: {fileID: 323594993}
   - component: {fileID: 323594996}
+  - component: {fileID: 323594997}
   m_Layer: 5
   m_Name: ButtonHolder
   m_TagString: buttonHold
@@ -2919,19 +2920,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 323594994}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 323594996}
-        m_TargetAssemblyTypeName: ButtonCompl, Assembly-CSharp
-        m_MethodName: SetOrderReady
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &323594994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2983,6 +2972,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOrderReady: 0
+  progressSlider: {fileID: 1881280543}
+--- !u!114 &323594997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323594991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 323594996}
+          m_TargetAssemblyTypeName: ButtonCompl, Assembly-CSharp
+          m_MethodName: ButtonPressed
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 323594996}
+          m_TargetAssemblyTypeName: ButtonCompl, Assembly-CSharp
+          m_MethodName: ButtonReleased
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &336078206
 GameObject:
   m_ObjectHideFlags: 0

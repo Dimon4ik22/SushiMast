@@ -207,7 +207,7 @@ public class IngredientsController : MonoBehaviour {
 	/// Play AudioClips
 	/// </summary>
 	/// <param name="_sfx">Sfx.</param>
-	void playSfx ( AudioClip _sfx  ){
+	public void playSfx ( AudioClip _sfx  ){
 		GetComponent<AudioSource>().clip = _sfx;
 		if(!GetComponent<AudioSource>().isPlaying)
 			GetComponent<AudioSource>().Play();
