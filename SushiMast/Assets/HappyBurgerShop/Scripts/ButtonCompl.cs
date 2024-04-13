@@ -13,7 +13,7 @@ public class ButtonCompl : MonoBehaviour
     public Slider progressSlider;
 
     private float buttonPressTime = 0f;
-    private const float REQUIRED_PRESS_TIME = 5f; // 5 секунд
+    private const float REQUIRED_PRESS_TIME = 2f; // 5 секунд
 
     private void OnEnable()
     {

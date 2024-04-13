@@ -40,7 +40,8 @@ public class CareerLevelSetup : MonoBehaviour {
 	//Important:
 	//Ingredient IDs 1 & 2 are used for the bottom & top bread, and should always be available if you want
 	//your final burgers to look good.
-	public int[] availableIngredients;			//array of indexes of available ingredients. starts from 1.
+	public int[] availableIngredients;          //array of indexes of available ingredients. starts from 1.
+	public int[] availableDrinks;
 
 	[Header("Game Objects & Materials")]
 	//star rating for levels

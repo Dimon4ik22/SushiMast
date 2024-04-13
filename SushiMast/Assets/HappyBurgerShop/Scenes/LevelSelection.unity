@@ -15,7 +15,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -28,7 +28,7 @@ NavMeshSettings:
     cellSize: 0.16666666
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -122,8 +122,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 10d27f6a248650247b34eadde7d977f4,
-    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 10d27f6a248650247b34eadde7d977f4, type: 2}
 --- !u!1 &38
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,9 +170,17 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
@@ -221,9 +228,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -496,9 +511,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38126634}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &38126638
@@ -632,6 +655,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 175
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000
+  availableDrinks: 
   levelStarsGo: {fileID: 1151792734}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -691,9 +715,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107824290}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &107824294
@@ -1111,6 +1143,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 280
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e000000
+  availableDrinks: 
   levelStarsGo: {fileID: 1384513394}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -1170,9 +1203,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354703482}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &354703487
@@ -1240,6 +1281,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 70
   availableIngredients: 01000000020000000300000004000000050000000600000007000000
+  availableDrinks: 
   levelStarsGo: {fileID: 934177229}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -1299,9 +1341,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357228056}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &357228060
@@ -1397,6 +1447,7 @@ MonoBehaviour:
   shopLocation: 1
   levelMission: 250
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c000000
+  availableDrinks: 
   levelStarsGo: {fileID: 1265918937}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -1456,9 +1507,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376438247}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &376438252
@@ -2000,6 +2059,7 @@ MonoBehaviour:
   shopLocation: 1
   levelMission: 100
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000
+  availableDrinks: 
   levelStarsGo: {fileID: 474709144}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -2059,9 +2119,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499577849}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &499577854
@@ -2486,6 +2554,7 @@ MonoBehaviour:
   shopLocation: 1
   levelMission: 180
   availableIngredients: 010000000200000003000000040000000500000006000000070000000800000009000000
+  availableDrinks: 
   levelStarsGo: {fileID: 433418036}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -2545,9 +2614,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170539005}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1170539009
@@ -2646,6 +2723,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 130
   availableIngredients: 0100000002000000030000000400000005000000
+  availableDrinks: 
   levelStarsGo: {fileID: 1985416749}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -2705,9 +2783,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203092011}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1203092016
@@ -2803,9 +2889,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207094077}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1207094080
@@ -2852,6 +2946,7 @@ MonoBehaviour:
   shopLocation: 1
   levelMission: 70
   availableIngredients: 01000000020000000300000004000000
+  availableDrinks: 6500000066000000
   levelStarsGo: {fileID: 250293446}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -3569,6 +3664,7 @@ MonoBehaviour:
   shopLocation: 1
   levelMission: 60
   availableIngredients: 010000000200000003000000040000000500000006000000
+  availableDrinks: 
   levelStarsGo: {fileID: 95427779}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -3628,9 +3724,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510257455}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1510257460
@@ -3976,6 +4080,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 200
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
+  availableDrinks: 
   levelStarsGo: {fileID: 1485727764}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -4035,9 +4140,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103424548}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &2103424553

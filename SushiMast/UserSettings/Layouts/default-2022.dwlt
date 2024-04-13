@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 1842
     height: 968
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -243,8 +243,8 @@ MonoBehaviour:
     y: 0
     width: 411
     height: 968
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -270,14 +270,14 @@ MonoBehaviour:
     y: 968
     width: 2560
     height: 335
-  m_MinSize: {x: 100, y: 121}
-  m_MaxSize: {x: 4000, y: 4021}
-  m_ActualView: {fileID: 19}
+  m_MinSize: {x: 230, y: 271}
+  m_MaxSize: {x: 10000, y: 10021}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
   - {fileID: 19}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -780,9 +780,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.7168593, y: -0.15816958, z: 0.092053175}
+    m_Target: {x: 0.30951977, y: -0.37742144, z: 1.0181628}
     speed: 2
-    m_Value: {x: -3.7168593, y: -0.15816958, z: 0.092053175}
+    m_Value: {x: 0.30951977, y: -0.37742144, z: 1.0181628}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -832,9 +832,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.080424
+    m_Target: 6.158786
     speed: 2
-    m_Value: 5.080424
+    m_Value: 6.158786
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -898,7 +898,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 28fbffffa05a0000a05d0000
+      m_ExpandedIDs: 4832ffff8a3cffff0644ffff544effffd452ffff1661ffff089cffff5ebeffffaac7ffffc6caffffb2d0ffff48e1ffff26e8ffff3aebffffdef2ffff28fbffff645a00002c620100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1048,7 +1048,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/HappyBurgerShop/Scripts
+    - Assets/HappyBurgerShop/Prefabs/Customers
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1056,16 +1056,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 67
   m_LastFolders:
-  - Assets/HappyBurgerShop/Scripts
+  - Assets/HappyBurgerShop/Prefabs/Customers
   m_LastFoldersGridSize: 67
   m_LastProjectPath: C:\New Programs\Unity Projects (Git)\SushiMast\SushiMast
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 0a610000
-    m_LastClickedID: 24842
-    m_ExpandedIDs: 000000009e600000
+    scrollPos: {x: 0, y: 122}
+    m_SelectedIDs: fe660000
+    m_LastClickedID: 26366
+    m_ExpandedIDs: 000000008e5f0000905f0000925f0000945f00000a67000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1093,7 +1093,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009e600000
+    m_ExpandedIDs: 000000008e5f0000905f0000925f0000945f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1118,8 +1118,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: a2080100
-    m_LastClickedInstanceID: 67746
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300002ee8080008db0800161b0a00cc530000d48500006e760000e28500006e44010074760000d2a7030088a5010038530100d0be0000a6980000c098000022a00000b6a900008a220100fc8e000062b4000054830200aaee00005eef00008eee0000e67a0000fc990500029a050068b400005c310d00725c0c0094700e00428a10000a950000c2920000b4950000f28c000000b1000042a8000044930000f0b20000045801006ac40100e858010014280500a25d06006658010002b60000eebf0100da910200e8c9020044ca0200eeb40000e8b40000e2b40000f48a010018b80000668c000094b300009cb300006a8c0000a0200200a6a2000000000000
     m_RenameOverlay:

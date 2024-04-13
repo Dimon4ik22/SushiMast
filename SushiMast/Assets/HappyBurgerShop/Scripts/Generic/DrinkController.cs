@@ -11,10 +11,13 @@ public class DrinkController : MonoBehaviour {
 
 	public int drinkID;						//Drink ID
 	private float delayTime;				//after this delay, we let player to be able to choose another drink again
-	private bool canTap;					//cutome flag to prevent double picking
+	private bool canTap;                    //cutome flag to prevent double picking
+    public bool isLocked;                  //check if this ingrediennt is locked or available
 
-	//Reference to game objects
-	private GameObject deliveryPlate;
+    public GameObject lockGo;				//lock prefab
+
+    //Reference to game objects
+    private GameObject deliveryPlate;
 	private GameObject currentCustomer;
 	private GameObject buttonCheck;
 
@@ -30,15 +33,44 @@ public class DrinkController : MonoBehaviour {
 	void Awake (){
 		delayTime = 0.15f;
 		canTap = true;
+		isLocked = true;
 		deliveryPlate = GameObject.FindGameObjectWithTag ("serverPlate");
 		buttonCheck = GameObject.FindGameObjectWithTag("buttonHold");
 	}
 
+    private void Start()
+    {
+        //check if this ingredient is available for this level
+        int ai = PlayerPrefs.GetInt("availableDrinks");
+        for (int i = 0; i < ai; i++)
+        {
+            if (drinkID == PlayerPrefs.GetInt("careerDrink_" + i))
+            {
+                isLocked = false;
+                break;
+            }
+        }
 
-	/// <summary>
-	/// FSM
-	/// </summary>
-	void Update (){
+        //check if this is locked on open
+        if (isLocked)
+        {
+            GetComponent<BoxCollider>().enabled = false;
+            GetComponent<Renderer>().material.color = new Color(1, 1, 1, 0.5f);
+            GameObject lck = Instantiate(lockGo, transform.position + new Vector3(0, 0, -0.1f), Quaternion.Euler(0, 180, 0)) as GameObject;
+            lck.name = "Lock";
+        }
+        else
+        {
+            GetComponent<BoxCollider>().enabled = true;
+            GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
+        }
+    }
+
+
+    /// <summary>
+    /// FSM
+    /// </summary>
+    void Update (){
 
 		if(canTap && !MainGameController.deliveryQueueIsFull && customerIsAvailable())
 			monitorTap();

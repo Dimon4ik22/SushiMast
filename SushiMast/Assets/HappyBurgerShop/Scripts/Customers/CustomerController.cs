@@ -19,10 +19,12 @@ public class CustomerController : MonoBehaviour {
 	public float customerPatience = 10.0f; 				//in seconds (default = 10)
 	public static int customerOrderSize;				//the size and complexity of the order (indicates the total ingredients used inside the burger)
 	public static int[] orderIngredientsIDs;			//IDs of the ingredients used inside the order
+	public static int[] orderDrinksIDs;
 
 	//Available items to order.
 	//Notice: customer can order just 1 item. A burger (with many ingredients) or a single drink
 	public static int[] availableIngredients;			//List of all available ingredients in this level
+	public int[] availableDrinks;
 
 	// Audio Clips
 	public AudioClip orderIsOkSfx;	
@@ -48,7 +50,7 @@ public class CustomerController : MonoBehaviour {
 	public static bool isCustomerReady;			//flag used to indicate this customer is inside the shop and wants to order something
 
 	public GameObject[] allIngredients;			//list of all ingredients defined for the game
-	public int availableDrinks = 3;				//total number of all available drinks 
+	public int availableDrinksTotal = 3;				//total number of all available drinks 
 
 	private string customerName;				//random name
 	private float currentCustomerPatience;		//current patience of the customer
@@ -85,6 +87,7 @@ public class CustomerController : MonoBehaviour {
 		customerOrderSize = Random.Range(3, PlayerPrefs.GetInt ("levelComplexity") + 1);
 		orderIngredientsIDs = new int[customerOrderSize];
 		availableIngredients = new int[0];
+		availableDrinks = new int[0];
 
 		isOnSeat = false;
 		isCustomerReady = false;
@@ -115,32 +118,42 @@ public class CustomerController : MonoBehaviour {
 		customerName = "Customer_" + Random.Range(100, 10000);
 		gameObject.name = customerName;
 
-		//check if this customer only wants a drink or we need to prepare for a complex order
-		if (Random.value > 0.8f) {
-			//we only want a drink. drink IDs start from 101.
-			int drinkID = Random.Range(0, availableDrinks) + 101;
-			//tell MainGameController to update order helper status
-			gameController.GetComponent<MainGameController>().updateDrinkHelper(drinkID);
+        //check if this customer only wants a drink or we need to prepare for a complex order
+        if (Random.value < 1f)
+        {
+			int b;
+            //we only want a drink. drink IDs start from 101
+            int ad = PlayerPrefs.GetInt("availableDrinks");
+            availableDrinks = new int[ad];
 
-			customerOrderSize = 1; 	//because we need 1 drink
-			orderIngredientsIDs = new int[customerOrderSize];
-			orderIngredientsIDs[0] = drinkID;
+            for (b = 0; b < ad; b++)
+            {
+                availableDrinks[b] = PlayerPrefs.GetInt("careerDrink_" + b);
+            }
+            int drinkID = Random.Range(0, availableDrinks.Length) + 101;
 
-			return;
-		}
+            //tell MainGameController to update order helper status
+            gameController.GetComponent<MainGameController>().updateDrinkHelper(drinkID);
+
+            customerOrderSize = 1;  //because we need 1 drink
+            orderIngredientsIDs = new int[customerOrderSize];
+            orderIngredientsIDs[0] = drinkID;
+            return;
+        }
 
 
-		//get the list of all available ingredients for this level
-		int ai = PlayerPrefs.GetInt("availableIngredients");
+        //get the list of all available ingredients for this level
+        int ai = PlayerPrefs.GetInt("availableIngredients");
 		availableIngredients = new int[ai];
 		//print ("availableIngredients: " + ai);
 		for (int a = 0; a < ai; a++) {
 			availableIngredients [a] = PlayerPrefs.GetInt ("careerIngredient_" + a);
 			//print ("ingredient " + a + " = " + availableIngredients [a]);
 		}
-	
-		//We need to make an order for this customer at runtime!
-		for (int n = 0; n < customerOrderSize; n++) {
+       
+
+        //We need to make an order for this customer at runtime!
+        for (int n = 0; n < customerOrderSize; n++) {
 
 			//set starting and end index with the IDs of bottom & top bread
 			if (n == 0) {
@@ -300,7 +313,7 @@ public class CustomerController : MonoBehaviour {
 								tips;
 
 			GameObject m = Instantiate(moneyGO,
-				new Vector3(2, -1, -1),
+				new Vector3(0, -1, -1),
 				Quaternion.Euler(0, 180, 0)) as GameObject;
 			m.name = "CustomerMoney-" + finalMoney.ToString() + "-" + Random.value;
 			m.GetComponent<customerMoneyController>().moneyAmount = finalMoney;

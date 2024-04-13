@@ -88,9 +88,17 @@ public class CareerMapManager : MonoBehaviour {
 				for(int i = 0; i < availableIngredients; i++) {
 					PlayerPrefs.SetInt(	"careerIngredient_" + i.ToString(), 
 						objectHit.GetComponent<CareerLevelSetup>().availableIngredients[i]);
-				}				
-				
-				yield return new WaitForSeconds(0.5f);
+				}
+                //set available drinks
+                int availableDrinks = objectHit.GetComponent<CareerLevelSetup>().availableDrinks.Length;
+                PlayerPrefs.SetInt("availableDrinks", availableDrinks); //save the length of availableIngredients
+                for (int i = 0; i < availableDrinks; i++)
+                {
+                    PlayerPrefs.SetInt("careerDrink_" + i.ToString(),
+                        objectHit.GetComponent<CareerLevelSetup>().availableDrinks[i]);
+                }
+
+                yield return new WaitForSeconds(0.5f);
 				SceneManager.LoadScene("Game");
 			}
 				
