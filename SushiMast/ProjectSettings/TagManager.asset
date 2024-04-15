@@ -13,6 +13,8 @@ TagManager:
   - DeliveryIngredient
   - customerMoney
   - buttonHold
+  - levelSelectionItem
+  - careerCont
   layers:
   - Default
   - TransparentFX

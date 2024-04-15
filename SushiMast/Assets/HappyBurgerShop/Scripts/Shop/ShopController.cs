@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class ShopController : MonoBehaviour {
 	
@@ -19,7 +20,9 @@ public class ShopController : MonoBehaviour {
 	public GameObject playerMoney;				//UI elements used to show player money
 	private int availableMoney;					//current (saved) player money
 
-	public GameObject[] totalItemsForSale;		//Purchase status
+	public GameObject[] totalItemsForSale;      //Purchase status
+
+	private GameObject levelSetup;
 
 
 	/// <summary>
@@ -127,8 +130,9 @@ public class ShopController : MonoBehaviour {
 						playSfx(coinsCheckout);
 						yield return new WaitForSeconds(1);
 						SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-					}
-					break;
+                        PlayerPrefs.SetInt("PurchasedDrinkID", 103);
+                    }
+                    break;
 				
 				case "BackButton":
 					playSfx(tapSfx);

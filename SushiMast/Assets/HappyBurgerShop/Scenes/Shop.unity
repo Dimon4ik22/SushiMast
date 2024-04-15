@@ -1780,7 +1780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemIndex: 3
-  itemPrice: 600
+  itemPrice: 0
   priceTag: {fileID: 1696066038}
 --- !u!23 &1132734199
 MeshRenderer:

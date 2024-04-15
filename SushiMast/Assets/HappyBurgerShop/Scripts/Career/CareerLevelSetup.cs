@@ -56,8 +56,27 @@ public class CareerLevelSetup : MonoBehaviour {
 	/// </summary>
 	void Start (){
 
-		//set level number
-		label.GetComponent<TextMesh>().text = levelID.ToString();
+        if (PlayerPrefs.HasKey("PurchasedDrinkID"))
+        {
+            int purchasedDrinkID = PlayerPrefs.GetInt("PurchasedDrinkID");
+
+            // Создаем новый массив с длиной массива availableDrinks + 1
+            int[] newAvailableDrinks = new int[availableDrinks.Length + 1];
+
+            // Копируем элементы из старого массива в новый
+            for (int i = 0; i < availableDrinks.Length; i++)
+            {
+                newAvailableDrinks[i] = availableDrinks[i];
+            }
+
+            // Добавляем купленный напиток в конец нового массива
+            newAvailableDrinks[newAvailableDrinks.Length - 1] = purchasedDrinkID;
+
+            // Присваиваем новый массив обратно в availableDrinks
+            availableDrinks = newAvailableDrinks;
+        }
+        //set level number
+        label.GetComponent<TextMesh>().text = levelID.ToString();
 		
 		if(CareerMapManager.userLevelAdvance >= levelID - 1) {
 			
