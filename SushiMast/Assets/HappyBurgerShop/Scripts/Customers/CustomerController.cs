@@ -39,11 +39,12 @@ public class CustomerController : MonoBehaviour {
 	 [3]Angry
 	 we change to appropriate material whenever needed. 
 	*/
+
 	public Material[] customerMoods; 
 	private int moodIndex;
 
-	//Private variables
-	internal Vector3 destination;				//destination in scene
+    //Private variables
+    internal Vector3 destination;				//destination in scene
 	private GameObject gameController; 			//reference to GC object
 	private GameObject serverPlate;             //reference to plate game ovject
 	private GameObject buttonCheck;
@@ -119,7 +120,7 @@ public class CustomerController : MonoBehaviour {
 		gameObject.name = customerName;
 
         //check if this customer only wants a drink or we need to prepare for a complex order
-        if (Random.value < 1f)
+        if (Random.value > 0.8f)
         {
 			int b;
             //we only want a drink. drink IDs start from 101
@@ -248,9 +249,10 @@ public class CustomerController : MonoBehaviour {
 			else
 				moodIndex = 0;
 		}
-			
+		
 		GetComponent<Renderer>().material = customerMoods[moodIndex];
-	}
+
+    }
 		
 
 	/// <summary>

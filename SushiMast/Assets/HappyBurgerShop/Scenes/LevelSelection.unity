@@ -655,7 +655,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 175
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000
-  availableDrinks: 000000000000000000000000
+  availableDrinks: 0000000000000000
   levelStarsGo: {fileID: 1151792734}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -744,7 +744,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107824290}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: -2.63, y: -2.45, z: -0.047677}
+  m_LocalPosition: {x: 3.53, y: 0.91, z: -0.047677}
   m_LocalScale: {x: 1.16756, y: 1.1675601, z: 0.0005896531}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1143,7 +1143,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 280
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e000000
-  availableDrinks: 000000000000000000000000
+  availableDrinks: 0000000000000000
   levelStarsGo: {fileID: 1384513394}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -1232,7 +1232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354703482}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: 6.7, y: 1.01, z: -0.047677}
+  m_LocalPosition: {x: 5.49, y: -0.28, z: -0.047677}
   m_LocalScale: {x: 1.16756, y: 1.1675601, z: 0.0005896531}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1281,7 +1281,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 70
   availableIngredients: 01000000020000000300000004000000050000000600000007000000
-  availableDrinks: 000000000000000000000000
+  availableDrinks: 0000000000000000
   levelStarsGo: {fileID: 934177229}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -1370,7 +1370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357228056}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: -2.44, y: 0.01, z: -0.047677}
+  m_LocalPosition: {x: -1.75, y: 2.37, z: -0.047677}
   m_LocalScale: {x: 1.16756, y: 1.1675601, z: 0.0005896531}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1447,7 +1447,7 @@ MonoBehaviour:
   shopLocation: 1
   levelMission: 250
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c000000
-  availableDrinks: 000000000000000000000000
+  availableDrinks: 0000000000000000
   levelStarsGo: {fileID: 1265918937}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -1536,7 +1536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376438247}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: 5.22, y: -1.02, z: -0.047677}
+  m_LocalPosition: {x: 2.74, y: -1.9, z: -0.05}
   m_LocalScale: {x: 1.16756, y: 1.1675601, z: 0.0005896531}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2031,7 +2031,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499577849}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: -4.88, y: -1.2, z: -0.047677}
+  m_LocalPosition: {x: 1.9, y: 2.14, z: -0.047677}
   m_LocalScale: {x: 1.16756, y: 1.1675601, z: 0.0005896531}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2059,7 +2059,7 @@ MonoBehaviour:
   shopLocation: 1
   levelMission: 100
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000
-  availableDrinks: 000000000000000000000000
+  availableDrinks: 0000000000000000
   levelStarsGo: {fileID: 474709144}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -2554,7 +2554,7 @@ MonoBehaviour:
   shopLocation: 1
   levelMission: 180
   availableIngredients: 010000000200000003000000040000000500000006000000070000000800000009000000
-  availableDrinks: 000000000000000000000000
+  availableDrinks: 0000000000000000
   levelStarsGo: {fileID: 433418036}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -2643,7 +2643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170539005}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: -0.21, y: -3.38, z: -0.047677}
+  m_LocalPosition: {x: 0.15, y: -0.64, z: -0.047677}
   m_LocalScale: {x: 1.16756, y: 1.1675601, z: 0.0005896531}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2695,7 +2695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203092011}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: -2.99, y: 2.87, z: -0.047677}
+  m_LocalPosition: {x: -7.35, y: 2.37, z: -0.05}
   m_LocalScale: {x: 1.16756, y: 1.1675601, z: 0.0005896531}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2723,7 +2723,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 130
   availableIngredients: 0100000002000000030000000400000005000000
-  availableDrinks: 000000000000000000000000
+  availableDrinks: 0000000000000000
   levelStarsGo: {fileID: 1985416749}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -2918,7 +2918,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207094077}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: -5.12, y: 2.02, z: -0.047677}
+  m_LocalPosition: {x: -5.56, y: 0.34, z: -0.05}
   m_LocalScale: {x: 1.16756, y: 1.1675601, z: 0.0005896531}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3636,7 +3636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510257455}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: 0.22, y: 1.32, z: -0.047677}
+  m_LocalPosition: {x: -4.29, y: 3.81, z: -0.047677}
   m_LocalScale: {x: 1.16756, y: 1.1675601, z: 0.0005896531}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3664,7 +3664,7 @@ MonoBehaviour:
   shopLocation: 1
   levelMission: 60
   availableIngredients: 010000000200000003000000040000000500000006000000
-  availableDrinks: 000000000000000000000000
+  availableDrinks: 0000000000000000
   levelStarsGo: {fileID: 95427779}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -4052,7 +4052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103424548}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: 2.75, y: -2.3, z: -0.047677}
+  m_LocalPosition: {x: -0.1, y: -3.16, z: -0.047677}
   m_LocalScale: {x: 1.16756, y: 1.1675601, z: 0.0005896531}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4080,7 +4080,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 200
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
-  availableDrinks: 000000000000000000000000
+  availableDrinks: 0000000000000000
   levelStarsGo: {fileID: 1485727764}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
