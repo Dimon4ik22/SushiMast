@@ -70,7 +70,6 @@ public class ButtonCompl : MonoBehaviour
     {
         isButtonPressed = true;
         buttonPressTime = 0f;
-        Debug.Log("Image Enabled");
     }
 
     public void ButtonReleased()

@@ -150,7 +150,7 @@ MonoBehaviour:
   patienceBarFG: {fileID: 1440652029083262}
   patienceBarBG: {fileID: 1285086454992434}
   moneyGO: {fileID: 1280382985764298, guid: 35f7a912b453bbe4f8df8f437ddf3b53, type: 3}
-  isOrderReady: 1
+  isOrderReady: 0
 --- !u!82 &82605120791644604
 AudioSource:
   m_ObjectHideFlags: 0

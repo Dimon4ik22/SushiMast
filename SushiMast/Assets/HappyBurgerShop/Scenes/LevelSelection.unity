@@ -655,7 +655,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 175
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000
-  availableDrinks: 0000000000000000
+  availableDrinks: 6500000066000000
   levelStarsGo: {fileID: 1151792734}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -1143,7 +1143,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 280
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e000000
-  availableDrinks: 0000000000000000
+  availableDrinks: 6500000066000000
   levelStarsGo: {fileID: 1384513394}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -1281,7 +1281,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 70
   availableIngredients: 01000000020000000300000004000000050000000600000007000000
-  availableDrinks: 0000000000000000
+  availableDrinks: 65000000
   levelStarsGo: {fileID: 934177229}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -1447,7 +1447,7 @@ MonoBehaviour:
   shopLocation: 1
   levelMission: 250
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c000000
-  availableDrinks: 0000000000000000
+  availableDrinks: 6500000066000000
   levelStarsGo: {fileID: 1265918937}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -2059,7 +2059,7 @@ MonoBehaviour:
   shopLocation: 1
   levelMission: 100
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000
-  availableDrinks: 0000000000000000
+  availableDrinks: 6500000066000000
   levelStarsGo: {fileID: 474709144}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -2554,7 +2554,7 @@ MonoBehaviour:
   shopLocation: 1
   levelMission: 180
   availableIngredients: 010000000200000003000000040000000500000006000000070000000800000009000000
-  availableDrinks: 0000000000000000
+  availableDrinks: 6500000066000000
   levelStarsGo: {fileID: 433418036}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -2723,7 +2723,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 130
   availableIngredients: 0100000002000000030000000400000005000000
-  availableDrinks: 0000000000000000
+  availableDrinks: 65000000
   levelStarsGo: {fileID: 1985416749}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -3664,7 +3664,7 @@ MonoBehaviour:
   shopLocation: 1
   levelMission: 60
   availableIngredients: 010000000200000003000000040000000500000006000000
-  availableDrinks: 0000000000000000
+  availableDrinks: 65000000
   levelStarsGo: {fileID: 95427779}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}
@@ -4080,7 +4080,7 @@ MonoBehaviour:
   shopLocation: 0
   levelMission: 200
   availableIngredients: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
-  availableDrinks: 0000000000000000
+  availableDrinks: 6500000066000000
   levelStarsGo: {fileID: 1485727764}
   starMats:
   - {fileID: 2100000, guid: 1f3b354fedb95d14fa9e20c769d9a5bb, type: 2}

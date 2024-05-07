@@ -148,7 +148,7 @@ public class MainGameController : MonoBehaviour {
 	
 		yield return new WaitForSeconds(0.15f);
 		//set objectives
-		UiLevelNumber.GetComponent<TextMesh>().text = "Level " + PlayerPrefs.GetInt("careerLevelID").ToString();
+		UiLevelNumber.GetComponent<TextMesh>().text = "Уровень " + PlayerPrefs.GetInt("careerLevelID").ToString();
 		UiLevelMission1.GetComponent<TextMesh> ().text = "$" + levelMission1.ToString();
 		UiLevelMission2.GetComponent<TextMesh> ().text = "$" + levelMission2.ToString();
 		UiLevelMission3.GetComponent<TextMesh> ().text = "$" + levelMission3.ToString();

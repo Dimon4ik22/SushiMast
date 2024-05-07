@@ -54,9 +54,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043874077427012}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &23195925896239556
@@ -114,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerPatience: 10
+  availableDrinks: 
   orderIsOkSfx: {fileID: 8300000, guid: 74597d3fbbf1b8549a3deeee835f72ba, type: 3}
   orderIsNotOkSfx: {fileID: 8300000, guid: ba57e9c094aaac947957583088acf36f, type: 3}
   customerMoods:
@@ -136,10 +145,12 @@ MonoBehaviour:
   - {fileID: 100000, guid: c86db81314ff5be48ac5d39e1f0bf287, type: 3}
   - {fileID: 100000, guid: 992a5b262807a974b8f3128860341b3d, type: 3}
   - {fileID: 100000, guid: 521362b102d2bd5468172944a4a600c6, type: 3}
-  availableDrinks: 3
+  availableDrinksTotal: 3
+  isOnSeat: 0
   patienceBarFG: {fileID: 1440652029083262}
   patienceBarBG: {fileID: 1285086454992434}
   moneyGO: {fileID: 1280382985764298, guid: 35f7a912b453bbe4f8df8f437ddf3b53, type: 3}
+  isOrderReady: 0
 --- !u!82 &82605120791644604
 AudioSource:
   m_ObjectHideFlags: 0

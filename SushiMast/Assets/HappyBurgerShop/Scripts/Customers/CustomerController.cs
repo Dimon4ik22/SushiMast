@@ -131,14 +131,18 @@ public class CustomerController : MonoBehaviour {
             {
                 availableDrinks[b] = PlayerPrefs.GetInt("careerDrink_" + b);
             }
-            int drinkID = Random.Range(0, availableDrinks.Length) + 101;
+            int drinkID;
+            do
+            {
+                drinkID = availableDrinks[Random.Range(0, availableDrinks.Length)];
+            } while (drinkID < 101); // Повторяем, пока не получим допустимый идентификатор напитка
 
-            //tell MainGameController to update order helper status
-            gameController.GetComponent<MainGameController>().updateDrinkHelper(drinkID);
-
-            customerOrderSize = 1;  //because we need 1 drink
+            customerOrderSize = 1;
             orderIngredientsIDs = new int[customerOrderSize];
             orderIngredientsIDs[0] = drinkID;
+
+            gameController.GetComponent<MainGameController>().updateDrinkHelper(drinkID);
+
             return;
         }
 

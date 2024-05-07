@@ -25,7 +25,7 @@ public class PlateController : MonoBehaviour
 		int dqi = MainGameController.deliveryQueueItems;
 
 		GameObject newIng = Instantiate (availableIngredients [ingID - 1], 
-			transform.position + new Vector3(0, -0.7f + (0.35f * dqi), -0.1f * dqi), 
+			transform.position + new Vector3(0, -0.6f + (0.15f * dqi), -0.1f * dqi), 
 			Quaternion.Euler (90, 0, 180)) as GameObject;
 		
 		newIng.transform.parent = transform;
